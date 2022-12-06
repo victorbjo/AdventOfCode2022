@@ -1,3 +1,4 @@
+import time
 file = "data.txt"
 data = []
 with open(file, "r") as w:
@@ -9,7 +10,12 @@ def allUnique(list):
                 return False
     return True
     return unique
-for idx, char in enumerate(data):
-    if allUnique(data[idx:idx+0]):
-        print(idx+4)
-        break
+def test(data):
+    for idx, char in enumerate(data):
+        if allUnique(data[idx:idx+4]):
+            return(idx+4)
+            break
+then = time.time()
+for i in range(1000):
+    test(data)
+print((time.time() - then)/1000)
