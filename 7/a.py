@@ -2,10 +2,10 @@ file = "data.txt"
 data = []
 class node:
     def __init__(self, data, parent, id):
-        self.data = data
-        self.dirs = {}
-        self.parent = parent
-        self.id = id
+        self.data : int = data
+        self.dirs :dict = {}
+        self.parent : node = parent
+        self.id : str = id
     def __repr__(self) -> str:
         return str(self.id)
 class Parser:
@@ -25,11 +25,9 @@ class Parser:
         else:
             newDir = line[5:]
             if newDir == "..":
-                if self.currentDir.parent != None:
-                    self.currentDir = self.currentDir.parent
+                self.currentDir = self.currentDir.parent
             else:
                 self.currentDir = self.currentDir.dirs[newDir]
-                print(self.currentDir, self.currentDir.parent, str(idx+1))
     def parseFile(self, line):    
         if line[:3] == "dir":
             dir = line[4:]
