@@ -24,14 +24,10 @@ for i in range(len(data)):
 aIndex = None
 bIndex = None
 pairs = orderByFirstNum(pairs)
-print(pairs)
 for i in range(len(pairs)):
-    print(pairs[i])
     if getFirstNum(pairs[i]) >= 2 and aIndex == None:
-        print(getFirstNum(pairs[i]), "HERE")
         aIndex = i+1
     if getFirstNum(pairs[i]) >= 6 and bIndex == None:
-        print(getFirstNum(pairs[i]), "HERE")
         bIndex = i+2
 print(aIndex*bIndex)
 
